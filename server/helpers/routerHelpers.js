@@ -6,7 +6,6 @@ module.exports = {
       const result = Joi.validate(req.body, schema);
       if (result.error) {
         console.log("result Error : ", result.error);
-
         return res.status(400).json(result.error);
       }
 

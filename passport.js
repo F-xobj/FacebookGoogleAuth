@@ -1,7 +1,7 @@
 const passport = require("passport");
 const JwtPassport = require("passport-jwt").Strategy;
 const localStrategy = require("passport-local").Strategy;
-const GooglePlusTokenStrategy = require("passport-google-plus-token");
+const GooglePlusTokenStrategy = require("passport-google-token").Strategy;
 const FacebookToken = require("passport-facebook-token");
 
 const { ExtractJwt } = require("passport-jwt");
@@ -20,7 +20,6 @@ passport.use(
       try {
         // find the users specified in token
         const user = await User.findById(payload.sub);
-
         // handel if user doesn't exist
         if (!user) {
           return done(null, false);
@@ -50,12 +49,8 @@ passport.use(
         const existUser = await User.findOne({ "google.id": profile.id });
 
         if (existUser) {
-          console.log("User `already exist in our database");
-
           return done(null, existUser);
         }
-        console.log("`create New USER");
-
         //if new account
         const newUser = new User({
           method: "google",
@@ -88,12 +83,8 @@ passport.use(
         const existUser = await User.findOne({ "facebook.id": profile.id });
 
         if (existUser) {
-          console.log("User `already exist in our database");
-
           return done(null, existUser);
         }
-        console.log("`create New USER");
-
         //if new account
         const newUser = new User({
           method: "facebook",
@@ -123,7 +114,6 @@ passport.use(
       try {
         //find the user
         const user = await User.findOne({ "local.email": email });
-        console.log("Finded Useer", user);
 
         //if not ,handel it
         if (!user) {
@@ -141,6 +131,7 @@ passport.use(
         // otherwise return the user
         done(null, user);
       } catch (error) {
+        console.log(email, password);
         done(error, false);
       }
     }

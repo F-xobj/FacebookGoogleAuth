@@ -5,7 +5,7 @@
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
   <a href="https://twitter.com/F_XOBJ" target="_blank">
-    <img alt="Twitter: F_XOBJ" src="https://img.shields.io/twitter/follow/F\_XOBJ.svg?style=social" />
+    <img alt="Twitter: F_XOBJ" src="https://img.shields.io/twitter/follow/F_XOBJ.svg?style=social" />
   </a>
 </p>
 
@@ -13,6 +13,20 @@
 
 ```sh
 npm install
+```
+
+## Run
+
+- Server side
+
+```sh
+npm run start:dev
+```
+
+- Client side
+
+```sh
+npm run start
 ```
 
 ## Author

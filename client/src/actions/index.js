@@ -5,8 +5,7 @@ export const signUp = data => {
     return async dispatch => {
 
         try {
-            const res = await axios.post('http://192.168.124.62:3001/users/signup', data)
-            console.log('Data Come From server', res);
+            const res = await axios.post('http://localhost:3001/users/signup', data)
             dispatch({
                 type: AUTH_SIGN_UP,
                 payload: res.data.token
@@ -28,8 +27,7 @@ export const signIn = data => {
     return async dispatch => {
 
         try {
-            const res = await axios.post('http://192.168.124.62:3001/users/signin', data)
-            console.log('Data Come From server', res);
+            const res = await axios.post('http://localhost:3001/users/signin', data)
             dispatch({
                 type: AUTH_SIGN_IN,
                 payload: res.data.token
@@ -51,7 +49,7 @@ export const signIn = data => {
 export const oauthGoogle = data => {
     return async dispatch => {
         try {
-            const res = await axios.post('http://192.168.124.62:3001/users/oauth/google', {
+            const res = await axios.post('http://localhost:3001/users/oauth/google', {
                 access_token: data
             })
             localStorage.setItem('JWT_TOKEN', res.data.token)
@@ -68,14 +66,13 @@ export const oauthGoogle = data => {
                 payload: 'Email is already in use'
             })
         }
-
     }
 }
 
 export const oauthFacebook = data => {
     return async dispatch => {
         try {
-            const res = await axios.post('http://192.168.124.62:3001/users/oauth/facebook', {
+            const res = await axios.post('http://localhost:3001/users/oauth/facebook', {
                 access_token: data
             })
             localStorage.setItem('JWT_TOKEN', res.data.token)
@@ -113,8 +110,7 @@ export const signOut = () => {
 export const getSecret = () => {
     return async dispatch => {
         try {
-            const res = await axios.get('http://192.168.124.62:3001/users/secret')
-            console.log(res);
+            const res = await axios.get('http://localhost:3001/users/secret')
 
             dispatch({
                 type: GET_SECRET,

@@ -31,8 +31,6 @@ ReactDOM.render(
         <Route path="/signout" exact component={authGuard(SignOut)} />
         <Route path="/" exact component={Home} />
         <Route path="/dashboard" exact component={authGuard(Dashboard)} />
-
-
       </App>
     </BrowserRouter>
   </Provider>,

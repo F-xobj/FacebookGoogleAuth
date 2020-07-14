@@ -1,10 +1,11 @@
 import React from "react";
 import NavBar from "./NavBar";
-import { Container } from "reactstrap";
-
+import {
+  Container
+} from 'semantic-ui-react'
 const App = (props) => {
   return (
-    <Container className="themed-container" fluid={true}>
+    <Container>
       <NavBar />
       {props.children}
     </Container>

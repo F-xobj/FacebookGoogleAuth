@@ -67,8 +67,6 @@ userSchema.pre("save", async function (next) {
 });
 
 userSchema.methods.ValidatePassword = async function (confirmedPassword) {
-  console.log('confirmedPassword', confirmedPassword);
-
   try {
     return await bcrypt.compare(confirmedPassword, this.local.password);
   } catch (error) {

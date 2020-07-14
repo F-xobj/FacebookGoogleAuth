@@ -16,17 +16,14 @@ module.exports = {
   signUp: async (req, res, next) => {
     //Email & Password
     const { email, password } = req.value.body;
-    console.log("email", email);
 
     //check if there is same user
     const foundUser = await User.findOne({ "local.email": email });
-    console.log("foundUser", foundUser);
 
     if (foundUser) {
       return res.status(403).json({ error: "Email is already in use " });
     }
     //create new user
-    console.log("Email : => ", email);
 
     const newUser = new User({
       method: "local",
@@ -62,7 +59,6 @@ module.exports = {
 
   facebookOAuth: async (req, res, next) => {
     // Generate Token
-    console.log("req.value", req.user);
     const token = signToken(req.user);
     res.status(200).json({
       token,
@@ -71,7 +67,6 @@ module.exports = {
   },
 
   secret: async (req, res, next) => {
-    console.log("Called Secret    at      :", new Date().getTime());
     res.json({ secret: "resource" });
   },
 };

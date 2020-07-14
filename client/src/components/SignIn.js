@@ -35,8 +35,6 @@ class signIn extends Component {
   }
 
   handelSubmit = async () => {
-    console.log(this.state);
-
     const res = await this.props.signIn(this.state)
     if (res) {
       this.props.history.push('/dashboard')
@@ -44,19 +42,16 @@ class signIn extends Component {
   }
 
   responseGoogle = async (res) => {
-    console.log('responseGoogle', res);
-    const data = await this.props.oauthGoogle(res.accessToken).then(data => {
-      console.log("data : ", data);
-      if (data) {
-        this.props.history.push('/dashboard')
-      }
-    })
+    const data = await this.props.oauthGoogle(res.accessToken)
+      .then(data => {
+        if (data) {
+          this.props.history.push('/dashboard')
+        }
+      })
   }
 
   responseFacebook = async (res) => {
-    console.log('responseFacebook', res);
     const data = await this.props.oauthFacebook(res.accessToken).then(data => {
-      console.log("data Facebook : ", data);
       if (data) {
         this.props.history.push('/dashboard')
       }

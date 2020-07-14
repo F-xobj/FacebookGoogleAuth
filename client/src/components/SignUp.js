@@ -41,9 +41,7 @@ class SignUp extends Component {
   }
 
   responseGoogle = async (res) => {
-    console.log('responseGoogle', res);
     const data = await this.props.oauthGoogle(res.accessToken).then(data => {
-      console.log("data : ", data);
       if (data) {
         this.props.history.push('/dashboard')
       }
@@ -51,9 +49,7 @@ class SignUp extends Component {
   }
 
   responseFacebook = async (res) => {
-    console.log('responseFacebook', res);
     const data = await this.props.oauthFacebook(res.accessToken).then(data => {
-      console.log("data Facebook : ", data);
       if (data) {
         this.props.history.push('/dashboard')
       }

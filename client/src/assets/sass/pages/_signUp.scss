@@ -1,0 +1,40 @@
+img {
+  width: 150px;
+  margin: 20px;
+}
+h2 {
+  margin: 20px 0 20px 0;
+}
+.brandTest {
+  margin: 5px;
+  width: 50px !important;
+  height: 50px !important;
+  background: #0000;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0 !important;
+  padding: 0 !important;
+  color: #0071bc !important;
+  font-size: 14px !important;
+  box-shadow: rgba(0, 0, 0, 0) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.24) 0px 0px 1px 0px !important;
+}
+.divider {
+  margin: 50px 0 20px 0;
+  width: 100%;
+  text-align: center;
+  span:before,
+  span:after {
+    background-color: #000;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 30%;
+  }
+}
+.loginForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

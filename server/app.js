@@ -19,16 +19,16 @@ MDB.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const app = express()
 app.use(cors())
 
-//Middleware
+// Middleware
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 
-//Routes
+// Routes
 app.use('/users', require('./routes/users'))
-//start server
+// start server
 
 const port = process.env.PORT || 3001
-app.listen(port, (req, err) => {
+app.listen(port, (_req, _err) => {
   console.log(`Server run at port ${port}`)
 })

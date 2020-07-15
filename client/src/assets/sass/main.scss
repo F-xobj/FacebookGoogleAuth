@@ -5,6 +5,7 @@
 @import 'vendors/bootstrap';
 @import 'vendors/jquery-ui';
 
+@import 'base/base';
 @import 'base/reset';
 @import 'base/typography';
 
@@ -16,17 +17,22 @@
 @import 'layout/forms';
 
 @import 'components/buttons';
+@import 'components/border';
+@import 'components/container';
+@import 'components/bosxes';
 @import 'components/carousel';
 @import 'components/slider';
 
 @import 'pages/home';
+@import 'pages/signUp';
 @import 'pages/about';
 @import 'pages/contact';
 
 @import 'themes/theme';
 @import 'themes/admin';
 /*
-Abstracts (or utilities): holds Sass tools, helper files, variables, functions, mixins and other config files. These files are meant to be just helpers which don’t output any CSS when compiled.
+Abstracts (or utilities): holds Sass tools,helper files, variables, functions,mixins and other config files. 
+  These files are meant to be just helpers which don’t output any CSS when compiled.
 
 Base: holds the boilerplate code for the project. Including standard styles such as resets and typographic rules, which are commonly used throughout your project.
 

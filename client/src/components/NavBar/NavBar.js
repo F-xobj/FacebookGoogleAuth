@@ -2,15 +2,6 @@ import React, { useState, Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../Redux/actions/index'
 import { Link } from 'react-router-dom'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap'
 
 class NavBar extends Component {
   signOut = () => {
@@ -19,7 +10,7 @@ class NavBar extends Component {
   render() {
     return (
       <>
-        <Navbar color="dark" light expand="md">
+        {/* <Navbar color="dark" light expand="md">
           <NavbarBrand
             style={{
               color: '#fff',
@@ -60,18 +51,6 @@ class NavBar extends Component {
                   <NavItem>
                     <NavLink>
                       <Link
-                        to="/signup"
-                        style={{
-                          color: '#fff',
-                        }}
-                      >
-                        SignUp
-                      </Link>
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink>
-                      <Link
                         to="/signin"
                         style={{
                           color: '#fff',
@@ -88,7 +67,7 @@ class NavBar extends Component {
                   <NavLink>
                     <Link
                       onClick={this.signOut}
-                      to="/signup"
+                      to="/"
                       style={{
                         color: '#fff',
                       }}
@@ -100,7 +79,7 @@ class NavBar extends Component {
               )}
             </Nav>
           </Collapse>
-        </Navbar>
+        </Navbar> */}
       </>
     )
   }

@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Route } from 'react-router-dom'
+import './assets/sass/main.scss'
 import App from './components/app'
 import Dashboard from './components/Dashboard/Dashboard'
-import Home from './components/Home/Home'
 import SignIn from './components/Logged/SignIn'
 import SignUp from './components/Logged/SignUp'
 import { createStore, applyMiddleware } from 'redux'
@@ -31,9 +30,8 @@ ReactDOM.render(
   >
     <BrowserRouter>
       <App>
-        <Route path="/signup" exact component={SignUp} />
+        <Route path="/" exact component={SignUp} />
         <Route path="/signin" exact component={SignIn} />
-        <Route path="/" exact component={Home} />
         <Route path="/dashboard" exact component={authGuard(Dashboard)} />
       </App>
     </BrowserRouter>

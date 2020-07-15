@@ -3,10 +3,16 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require('cors')
-mongoose.connect("mongodb://localhost/APIAuthentication", {
+const configuration = require("./configuration/index");
+
+mongoose.connect(configuration.MONGOOSE_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+  useCreateIndex: true,
+}).then(() => console.log('Connect')).catch((err) => console.log("err", err));
+
+const MDB = mongoose.connection;
+MDB.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const app = express();
 app.use(cors());
 

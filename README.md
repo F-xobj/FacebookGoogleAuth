@@ -18,15 +18,10 @@ npm install
 ## Run
 
 - Server side
-
-```sh
-npm run start:dev
-```
-
 - Client side
 
 ```sh
-npm run start
+npm run dev
 ```
 
 ## Author
@@ -34,9 +29,4 @@ npm run start
 👤 **FXOBJ**
 
 - Twitter: [@F_XOBJ](https://twitter.com/F_XOBJ)
-- Github: [@F-xobj](https://github.com/F-xobj)
 - LinkedIn: [@f-xobj](https://linkedin.com/in/f-xobj)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!

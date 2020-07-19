@@ -49,88 +49,13 @@ class SignUp extends Component {
   render() {
     const element = <FontAwesomeIcon icon={faFacebook} size="2x" />
     return (
-      // <Container>
-      //   <Row xs="3" className="mt-4 ml-auto">
-      //     <Col
-      //       sm={{
-      //         offset: 2,
-      //       }}
-      //     >
-      //       <Form>
-      //         <FormGroup>
-      //           <Label for="email">Email</Label>
-      //           <Input
-      //             type="email"
-      //             name="email"
-      //             id="email"
-      //             placeholder="email placeholder"
-      //             onChange={this.handelChange}
-      //           />
-      //         </FormGroup>
-      //         <FormGroup>
-      //           <Label for="password">Password</Label>
-      //           <Input
-      //             type="password"
-      //             name="password"
-      //             id="password"
-      //             placeholder="password placeholder"
-      //             onChange={this.handelChange}
-      //           />
-      //         </FormGroup>
-      //         {this.props.errorMessage ? (
-      //           <Alert color="danger">{this.props.errorMessage}</Alert>
-      //         ) : (
-      //           ''
-      //         )}
-      //         <Button color="primary" onClick={this.handelSubmit}>
-      //           SignUp
-      //         </Button>
-      //       </Form>
-      //     </Col>
-
-      //     <Col sm={{ size: 'auto', offset: 1 }}>
-      //       <Container className="themed-container">
-      //         <Row xs="1" className="mt-4">
-      //           <Alert color="primary">Sign Up With :</Alert>
-      //         </Row>
-      //         <Row xs="4" className="mt-3 ">
-      //           <Col sm={{ size: 'auto', offset: 0.5 }}>
-      //             <Button color="primary">
-      //               <GoogleLogin
-      //                 clientId="696567563959-7p8kts89voj9k01504jprs9o3aacfgqj.apps.googleusercontent.com"
-      //                 buttonText="Google "
-      //                 uxMode="popup"
-      //                 onSuccess={this.responseGoogle}
-      //                 onFailure={this.responseGoogle}
-      //                 cookiePolicy={'single_host_origin'}
-      //                 cssClass="outline btn btn-primary"
-      //               />
-      //             </Button>
-      //           </Col>
-      //           <Col sm={{ size: 'auto', offset: 0.5 }}>
-      //             <Button color="primary">
-      //               <FacebookLogin
-      //                 appId="2771619929761813"
-      //                 autoLoad={false}
-      //                 textButton="FaceBook"
-      //                 fields="name,email,picture"
-      //                 callback={this.responseFacebook}
-      //                 cssClass="outline btn btn-primary"
-      //               />
-      //             </Button>
-      //           </Col>
-      //         </Row>
-      //       </Container>
-      //     </Col>
-      //   </Row>
-      // </Container>
       <>
         <div className="container">
           <>
             <img src={Knight} alt={Knight} />
             <div className="sBox sBorder">
               <>
-                <h2>Login As :</h2>
+                <h2>Login as</h2>
                 <div className="circleButton">
                   <GoogleLogin
                     clientId="696567563959-7p8kts89voj9k01504jprs9o3aacfgqj.apps.googleusercontent.com"
@@ -163,7 +88,7 @@ class SignUp extends Component {
                       class="input-field"
                       type="text"
                       placeholder=" Email"
-                      name="email"
+                      id="email"
                       onChange={this.handelChange}
                     />
                   </div>
@@ -177,7 +102,7 @@ class SignUp extends Component {
                       class="input-field"
                       type="password"
                       placeholder=" ********"
-                      name="password"
+                      id="password"
                       onChange={this.handelChange}
                     />
                   </div>

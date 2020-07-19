@@ -7,7 +7,7 @@ class Dashboard extends Component {
     this.props.getSecret()
   }
   render() {
-    return <></>
+    return <>{this.props.secret}</>
   }
 }
 
